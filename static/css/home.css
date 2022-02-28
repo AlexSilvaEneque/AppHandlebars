@@ -1,0 +1,9 @@
+.content {
+    background-color: rgba(21, 22, 24, 0.067);
+    padding: 25px;
+}
+
+.content__card {
+    background-color: #fff;
+    padding-left: 5px;
+}

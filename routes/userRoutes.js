@@ -10,16 +10,25 @@ router.get('/', async (req, res) => {
     return res.render('home',{users})
 })
 
-router.get('/user/:id', async (req, res) => {
+router.get('/userEdit/:id', async (req, res) => {
     const id = req.params.id
     let user = await userController.readById(id)
-    return  res.json(user)
+    let gender = user[0].genero
+    return res.render('user',{user:user[0],male: gender == 'M',female: gender == 'F'})
+})
+
+router.get('/create', (req, res) => {
+    return res.render('create')
 })
 
 router.post('/user/create', async (req, res) => {
     const data = req.body
     let newUser = await userController.create('users', data)
-    return res.json(newUser)
+    if (newUser.success) {
+        return res.redirect('/')
+    } else {
+        return res.render('create',{error:true,message: newUser.error.sqlMessage, data:data, male: data.genero=='M',female:data.genero=='F'})
+    }
 })
 
 router.put('/user/edit/:id', async (req, res) => {

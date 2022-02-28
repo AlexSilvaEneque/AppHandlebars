@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
     <h1>HOME</h1>
-    <ul>
+    <div class="content">
+        <a href="/create">New User</a>
         {{#each users}}
-            <li>{{this.nombre}}</li>
+            <div class="content__card">
+                <p>{{ this.nombre }}</p>
+                <p>{{ this.edad }}</p>
+                <p>{{ this.profesion }}</p>
+                <a href="/userEdit/{{ this.id }}">Edit</a>
+                <button onclick="eliminar({{this.id}})">Delete</button>
+            </div>
         {{/each}}
-    </ul>
+    </div>
+
+    <script src="/js/user.js"></script>
 </body>
 </html>

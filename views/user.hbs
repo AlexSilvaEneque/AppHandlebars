@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Details</h1>    
+    <form id="frmEdit">
+        <input type="text" name="nombre" value="{{ user.nombre }}">
+        <br>
+        <input type="number" name="edad" value="{{ user.edad }}">
+        <br>
+        <select name="genero" id="">
+            <option value="M"
+                {{#if male}}
+                    selected
+                {{/if}}
+            >M</option>
+            <option value="F"
+                {{#if female}}
+                    selected
+                {{/if}}
+            >F</option>
+        </select>
+        <br>
+        <input type="email" name="email" id="" value="{{ user.email }}">
+        <br>
+        <input type="text" name="profesion" value="{{ user.profesion }}">
+        <br>
+        <input type="text" name="salario" value="{{ user.salario }}">
+        <br>
+        <input type="text" name="nroTelef" value="{{ user.nroTelef }}">
+        <button id="modify">Guardar Cambios</button>
+    </form>
+    <script src="/js/userEdit.js"></script>
+</body>
+</html>

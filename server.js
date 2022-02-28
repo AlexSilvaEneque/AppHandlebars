@@ -7,7 +7,7 @@ const router = require('./routes/userRoutes')
 const app = express()
 
 const hbs = handlebars.create({
-    defaultLayout:false
+    defaultLayout:false,
     // pueden ir los helpers
 })
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <form action="/user/create" method="post">
+        <input type="text" name="nombre" 
+            {{#if data}}
+                value="{{data.nombre}}"
+            {{else}}
+                value=""
+            {{/if}}
+        >
+        <br>
+        <input type="number" name="edad"
+            {{#if data}}
+                value="{{data.edad}}"
+            {{else}}
+                value=""
+            {{/if}}
+        >
+        <br>
+        <select name="genero" id="">
+            <option value="M"
+                {{#if male}}
+                    selected
+                {{/if}}
+            >M</option>
+            <option value="F"
+                {{#if female}}
+                    selected
+                {{/if}}
+            >F</option>
+        </select>
+        <br>
+        <input type="email" name="email"
+            {{#if data}}
+                value="{{data.email}}"
+            {{else}}
+                value=""
+            {{/if}}
+        >
+        <br>
+        <input type="text" name="profesion"
+            {{#if data}}
+                value="{{data.profesion}}"
+            {{else}}
+                value=""
+            {{/if}}
+        >
+        <br>
+        <input type="text" name="salario"
+            {{#if data}}
+                value="{{data.salario}}"
+            {{else}}
+                value=""
+            {{/if}}
+        >
+        <br>
+        <input type="text" name="nroTelef"
+            {{#if data}}
+                value="{{data.nroTelef}}"
+            {{else}}
+                value=""
+            {{/if}}
+        >
+        <button id="modify">Guardar Cambios</button>
+    </form>
+    {{#if error}}
+        <p>{{ message }}</p>
+    {{/if}}
+</body>
+</html>
