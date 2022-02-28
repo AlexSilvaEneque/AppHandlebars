@@ -7,7 +7,7 @@ const userController = new UserController()
 
 router.get('/', async (req, res) => {
     let users = await userController.readAll()
-    return res.json(users)
+    return res.render('home',{users})
 })
 
 router.get('/user/:id', async (req, res) => {

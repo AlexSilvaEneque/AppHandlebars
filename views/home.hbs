@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>HOME</h1>
+    <ul>
+        {{#each users}}
+            <li>{{this.nombre}}</li>
+        {{/each}}
+    </ul>
 </body>
 </html>
